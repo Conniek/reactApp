@@ -34,8 +34,8 @@ class Marvel extends React.Component<{}, { characters: any, error: boolean }> {
 			// get API response and receive data in JSON format
 			.then(response => response.json())
 			// then map in data and put them in DOM
-			.then(data => {
-				let characters = data.data.results.map((character:any) => {
+			.then(resp => {
+				let characters = resp.data.results.map((character:any) => {
 					const thumbnail = character.thumbnail.path + ".jpg";
 					return (
 						<div key={character.id}>
